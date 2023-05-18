@@ -1,15 +1,15 @@
-<h1>ALL LISTINGS</h1>
+@extends('layout')
 
-@foreach($listings as $listing)
-<h1>{{ $listing['id'] }}</h1>
-<p>
-    <h2>
-        <a href="/listings/{{ $listing['id'] }}">
-            {{ $listing['title'] }}
-        </a>
-    </h2>
-</p>
-<p>{{ $listing['description'] }}</p>
-@endforeach
+@section('data')
 
-<h1>SAMPLE TEST AFTER FOREACH</h1>
+@include('partials._hero')
+@include('partials._search')
+
+<div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
+    @foreach($listings as $listing)
+    <x-listing-card :listing="$listing"/>
+
+    @endforeach
+</div>
+
+@endsection

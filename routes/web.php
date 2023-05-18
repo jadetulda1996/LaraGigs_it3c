@@ -20,11 +20,6 @@ Route::get('/', function () {
     return view('listings', compact(['listings']));
 });
 
-Route::get('/listings/{id}', function($id){
-    $listing = Listing::find($id);
-
-    if(!$listing)
-        abort('404');
-
+Route::get('/listings/{listing}', function(Listing $listing){
     return view('listing', compact('listing'));
 });
