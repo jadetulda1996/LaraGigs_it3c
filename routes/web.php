@@ -15,10 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('dashboard');
-
-Route::get('/listings', function(){
     $listings = Listing::all();
 
     return view('listings', compact(['listings']));
@@ -32,10 +28,3 @@ Route::get('/listings/{id}', function($id){
 
     return view('listing', compact('listing'));
 });
-
-// Route::get('/users/{id?}/posts',function($id=100){
-//     // dd(request()->q);
-//     // dd($_GET['q']);
-//     return $id;
-//     // return response("<h1>Hello World</h1>");
-// })->name('user_posts');
