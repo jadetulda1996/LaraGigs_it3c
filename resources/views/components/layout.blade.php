@@ -47,7 +47,8 @@
             </ul>
         </nav>
         <main>
-            @yield('data')
+            {{ $slot }}
+            {{-- @yield('data') --}}
         </main>
 
         <footer
