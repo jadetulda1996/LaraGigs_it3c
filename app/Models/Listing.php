@@ -14,4 +14,9 @@ class Listing extends Model
     // protected $fillable = [
     //     'company', 'title', 'website', 'tags', ''
     // ]
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'author_id');
+    }
 }

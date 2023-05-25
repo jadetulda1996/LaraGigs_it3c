@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Listing;
+use App\Models\Phone;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,13 +14,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(5)->create();
+        $users = \App\Models\User::factory(5)->create();
+
+        foreach ($users as $user) {
+            Phone::factory()->create([
+                'user_id' => $user->id
+            ]);
+        }
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
 
-        Listing::factory(10)->create();
+        Listing::factory(100)->create();
     }
 }
