@@ -15,7 +15,8 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->string('tags');
-            $table->foreignIdFor(User::class, 'author_id');
+            $table->foreignIdFor(User::class);
+            // $table->foreignIdFor(User::class, 'author_id');
             $table->string('company');
             $table->string('location');
             $table->string('email')->unique();
