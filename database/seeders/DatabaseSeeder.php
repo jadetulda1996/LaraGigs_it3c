@@ -27,8 +27,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Listing::factory(100)->create([
-            'user_id' => fake()->randomElement([1, 2, 3, 4, 5])
-        ]);
+        Listing::factory(100)->create();
     }
 }

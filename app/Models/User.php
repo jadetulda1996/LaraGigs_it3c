@@ -50,7 +50,7 @@ class User extends Authenticatable
 
     public function listings()
     {
-        // return $this->hasMany(Listing::class, 'author_id');
-        return $this->hasMany(Listing::class);
+        return $this->hasMany(Listing::class, 'author_id');
+        // return $this->hasMany(Listing::class);
     }
 }

@@ -27,7 +27,7 @@ class ListingController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $user_id = fake()->randomElement([1, 2, 3, 4, 5]);
+        $author_id = fake()->randomElement([1, 2, 3, 4, 5]);
 
         $formFields = $request->validate([
             'company' => 'required',
@@ -39,7 +39,7 @@ class ListingController extends Controller
             'description' => 'required'
         ]);
         
-        $formFields['user_id'] = $user_id;
+        $formFields['author_id'] = $author_id;
 
         $newData = Listing::create($formFields);
 
